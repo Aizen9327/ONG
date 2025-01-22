@@ -1,0 +1,723 @@
+@font-face {
+    font-family: "Impact";
+    src: url('Impact.ttf') format('truetype');
+}
+
+@font-face {
+    font-family: "Kanit";
+    src: url('Kanit-Regular.ttf') format('truetype');
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+	margin:0;
+	overflow-x:hidden;
+	background-color:#162B60;
+	}
+	
+h2 {
+font-family:"Impact";
+font-weight:normal;
+margin-block-start:0px;
+margin-block-end:0px;
+}
+
+p, h4 {
+font-family:"Kanit";
+}
+
+header {
+position:sticky;
+top:0;
+left:0;
+z-index:200;
+width:100%;
+background-color:#162B60;
+height:90px;
+display:flex;
+flex-direction:row;
+align-items:center;
+overflow:hidden;
+box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.all-menu {
+    display: flex;
+    flex-direction: row;
+    margin-left: 300px;
+    font-family: "Kanit";
+}
+
+.menu {
+    margin-left: 40px; /* Ajustez l'espacement entre les items */
+    position: relative; /* Nécessaire pour le pseudo-élément */
+}
+
+.menu a {
+    text-decoration: none; /* Supprime le soulignement */
+    color: white; /* Garde le texte blanc */
+    font-size: 20px;
+}
+
+.menu a:hover {
+    color: #F29653; /* Change la couleur au survol (optionnel) */
+}
+
+.menu a::after {
+    content: ""; /* Crée un pseudo-élément */
+    position: absolute;
+    bottom: -30px;
+    left: 0;
+    width: 0; /* Commence avec une largeur nulle */
+    height: 3px; /* Épaisseur de la barre */
+    background-color: #F29653; /* Couleur orange */
+    transition: width 0.3s ease; /* Animation fluide */
+}
+
+.menu a:hover::after {
+    width: 100%; /* La barre s'étend sur toute la largeur au survol */
+}
+
+
+.img-accueil img {
+	width:100%;
+	display:block;
+	}
+	
+.accroche {
+	margin-top:-100px;
+	}
+
+.texte-accroche {
+	position:absolute;
+	top:65%;
+	left:5%;
+	z-index:50;
+	background-color:#E73737;
+	color:white;
+	width:40%;
+	font-size:1.9rem;	
+	margin-top:-50px;
+	padding-top:-20px;
+	padding-bottom:-20px;
+	display:inline;
+	}
+
+.voirplus {
+	position:absolute;
+	top:80%;
+	left:5%;
+	z-index:50;
+	background-color:white;
+	color:black;
+	border-radius:0px;
+	border:2px solid black;
+	font-size:1.4rem;
+	font-family:"Kanit";
+	padding-right:15px;
+	padding-left:15px;
+	padding-top:8px;
+	padding-bottom:8px;
+	}
+
+.banniere-don {
+	width:100%;
+	}
+
+.banniere-don p {
+	color:white;
+	background-color:#162B60;
+	margin-top:-20px;
+	padding:50px;
+	}
+	
+.donner {
+	position:absolute;
+	right:5%;
+	top:98%;
+	color:white;
+	background-color:#F29653;
+	border:1px solid #F29653;
+	padding-right:10px;
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	font-family:"Kanit";
+	font-size:16px;
+	}
+	
+.dechirure {
+	margin-top:-30px;
+	width:100%;
+	}
+	
+.description {
+	margin-top:-50px;
+	padding-top:100px;
+	background-color:#1D1D1D;
+	color:white;
+	}	
+
+.description p {
+	text-align:center;
+	}
+	
+.description h2 {
+	font-size:40px;
+	}
+	
+.rubriques {
+	margin-top:70px;
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	justify-content:center;
+}
+
+.rubrique1 {
+	width:200px;
+	margin-right:50px;
+}
+
+.rubrique2 {
+	width:200px;
+	margin-right:50px;
+}
+	
+.rubrique3 {
+	width:200px;
+	margin-right:50px;
+}
+	
+.rubrique4 {
+	width:200px;
+	}
+	
+.rubrique1 h2 {
+	background-color:#7DA0C2;
+	color:white;
+	width:200px;
+	text-align:center;
+	font-family:25px;
+	}
+	
+.rubrique2 h2 {
+	background-color:#F29653;
+	color:white;
+	width:200px;
+	text-align:center;
+	font-family:25px;
+	}
+	
+.rubrique3 h2 {
+	background-color:#E73737;
+	color:white;
+	width:200px;
+	text-align:center;
+	font-family:25px;
+	}
+	
+.rubrique4 h2 {
+	background-color:#172F4A;
+	color:white;
+	width:200px;
+	text-align:center;
+	font-family:25px;
+	}
+
+.dechirure2 {
+	margin-top:40px;
+	width:100%;
+	}
+
+.chiffres {
+	padding-top:60px;
+	background-color:#162B60;
+	margin-top:-20px;
+	}
+	
+.chiffres h2 {
+	text-align:center;
+	color:white;
+	margin-bottom:60px;
+	font-size:40px;
+	}
+	
+.ptitetriche {
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	align-items:center;
+	gap:50px;
+	padding-bottom:60px;
+	}
+
+.articles {
+	background-color:#171717;
+	padding-top:30px;
+	}
+	
+.articles h2 {
+	margin-left:30px;
+	color:white;
+	font-size:40px;
+	}
+	
+.rubrique-articles {
+margin-top:40px;
+display:flex;
+flex-direction:row;
+justify-content:center;
+align-items:center;
+margin-top
+}
+
+.rubrique-article1 {
+display:flex;
+flex-direction:column;
+width:350px;
+height:380px;
+background-color:white;
+}
+
+.rubrique-article2 {
+margin-left:80px;
+display:flex;
+flex-direction:column;
+width:350px;
+height:380px;
+background-color:white;
+}
+
+.rubrique-article3 {
+margin-left:80px;
+display:flex;
+flex-direction:column;
+width:350px;
+height:380px;
+background-color:white;
+}
+
+.rubrique-article1 img {
+	max-width:350px;
+	}
+
+.rubrique-article2 img {
+	max-width:350px;
+	}
+	
+.rubrique-article3 img {
+	max-width:350px;
+	}
+	
+.rubrique-article1 p {
+	padding:10px;
+	font-size:16px;
+	}
+
+.rubrique-article2 p {
+	padding:10px;
+	font-size:16px;
+	}
+	
+.rubrique-article3 p {
+	padding:10px;
+	font-size:16px;
+	}
+	
+.voirplus-articles {
+	position:relative;
+	left:1408px;
+	top:98%;
+	color:white;
+	background-color:#F29653;
+	border:1px solid #F29653;
+	padding-right:10px;
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	font-family:"Kanit";
+	font-size:16px;
+	margin-top:50px;
+	margin-bottom:30px;
+	}
+	
+.partenaires {
+	display:flex;
+	flex-direction:row;
+	align-items:center;
+	background-color:#162B60;
+	padding-top:100px;
+	padding-bottom:100px;
+	padding-left:200px;
+	color:white;
+	}
+	
+.partenaire-texte h2 {
+	font-size:40px;
+	}
+	
+.partenaire-texte {
+	margin-right:300px;
+	}
+	
+.partenaires img {
+	margin-left:100px;
+	}
+	
+.sensibilisation {
+	display:flex;
+	flex-direction:row;
+	justify-content:center;
+	background-color:162B60;
+	padding:70px 100px 100px 100px;
+	}
+	
+.textebutton {
+	padding:30px 20px 30px 20px;
+	background-color:#171717;
+	
+	}
+	
+.sensibilisation h2 {
+	font-size:40px;
+	margin-bottom:30px;
+	color:white;
+	}
+	
+.sensibilisation button {
+	padding-right:10px;
+	padding-left:10px;
+	padding-top:5px;
+	padding-bottom:5px;
+	background-color:#F29653;
+	font-family:"Kanit";
+	font-size:16px;
+	color:white;
+	border:1px solid #F29653;
+	}
+	
+footer {
+            background-color: #162B60;
+            padding: 20px;
+            display: grid;
+            grid-template-columns: 1fr 2fr 1fr;
+            align-items: center;
+            color: white;
+            margin-top: auto;
+        }
+        footer .logo {
+            justify-self: start;
+        }
+        footer p {
+            margin: 0;
+            text-align: left;
+            font-size: 12px;
+            justify-self: start;
+            max-width: 80%;
+        }
+        footer nav {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 5px;
+            justify-self: center;
+        }
+        footer nav a {
+            color: white;
+            text-decoration: none;
+            font-size: 12px;
+            font-family: "Kanit";
+        }
+        footer nav a:hover {
+            text-decoration: underline;
+        }
+        footer .newsletter {
+            display: flex;
+            justify-content: end;
+            align-items: center;
+        }
+        footer .newsletter input {
+            padding: 4px;
+            border: none;
+            border-radius: 3px;
+            margin-right: 5px;
+        }
+        footer .newsletter button {
+            background-color: #F29653;
+            color: white;
+            border: none;
+            padding: 4px 8px;
+            border-radius: 3px;
+            cursor: pointer;
+        }
+        footer .newsletter button:hover {
+            background-color: #F29653;
+        }
+        
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.05);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+/* Effet d'apparition pour les sections */
+.accroche, .banniere-don, .description, .chiffres, .articles, .partenaires, .sensibilisation {
+    animation: fadeIn 1.5s ease-in-out;
+}
+
+/* Animation du menu */
+.menu a {
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.menu a:hover {
+    color: #F29653;
+    transform: scale(1.1);
+}
+
+.menu a::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    width: 0;
+    height: 3px;
+    background-color: #F29653;
+    transition: width 0.3s ease, left 0.3s ease;
+}
+
+.menu a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+/* Animation du bouton "voir plus" */
+.voirplus, .donner, .faireundon, .voirplus-articles {
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.voirplus:hover, .donner:hover, .faireundon:hover, .voirplus-articles:hover {
+    background-color: #E73737;
+    transform: scale(1.1);
+}
+
+/* Animation des rubriques avec effet slide */
+.rubrique1, .rubrique2, .rubrique3, .rubrique4 {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.rubrique1 {
+    animation-delay: 0.2s;
+}
+
+.rubrique2 {
+    animation-delay: 0.4s;
+}
+
+.rubrique3 {
+    animation-delay: 0.6s;
+}
+
+.rubrique4 {
+    animation-delay: 0.8s;
+}
+
+/* Animation des chiffres clés */
+.ptitetriche img {
+    opacity: 0;
+    transform: scale(0.8);
+    animation: fadeIn 1.5s ease-in-out forwards, pulse 2s infinite;
+}
+
+.ptitetriche img:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.ptitetriche img:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.ptitetriche img:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+/* Animation des articles récents */
+.rubrique-article1, .rubrique-article2, .rubrique-article3 {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+}
+
+.rubrique-article1 {
+    animation-delay: 0.2s;
+}
+
+.rubrique-article2 {
+    animation-delay: 0.4s;
+}
+
+.rubrique-article3 {
+    animation-delay: 0.6s;
+}
+
+/* Animation des partenaires */
+.partenaires img {
+    animation: bounce 3s infinite ease-in-out;
+}
+
+/* Animation de la section sensibilisation */
+.sensibilisation {
+    display: flex;
+    justify-content: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+.textebutton {
+    animation: slideInRight 1.5s ease-in-out;
+}
+
+/* Animation du footer */
+footer {
+    opacity: 0;
+    animation: fadeIn 1.5s ease-in-out forwards;
+    animation-delay: 1s;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    animation: pulse 0.5s ease-in-out;
+}
+
+footer {
+    background-color: #162B60; /* Fond blanc */
+    padding: 20px 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Espace entre les colonnes */
+    align-items: center; /* Aligner verticalement */
+    max-width: 1200px; /* Largeur max pour limiter l'étirement */
+    margin: 0 auto; /* Centrer le contenu */
+}
+
+.footer-left {
+    flex: 1; /* Prenez tout l'espace disponible à gauche */
+}
+
+.footer-logo {
+    max-height: 50px; /* Limitez la taille du logo */
+    object-fit: contain; /* Gardez les proportions */
+}
+
+.footer-right {
+    flex: 1; /* Prenez tout l'espace disponible à droite */
+    text-align: right; /* Alignement du texte à droite */
+}
+
+.footer-right h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #F29653; /* Couleur violette pour le titre */
+    margin-bottom: 8px;
+    font-family: "Impact";
+    font-weight: normal;
+}
+
+.footer-right p {
+    font-size: 14px;
+    color: #F29653;
+    margin-bottom: 15px;
+    font-family: "Kanit";
+}
+
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Aligner le formulaire à droite */
+    gap: 10px; /* Espacement entre le champ et le bouton */
+}
+
+.newsletter-form input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    width: 250px;
+    outline: none;
+}
+
+.newsletter-form input::placeholder {
+    color: #999; /* Couleur de l'indication */
+}
+
+.newsletter-form button {
+    background-color: #F29653; /* Couleur violette */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #162B60; /* Violette plus foncée au survol */
+}
+
+	

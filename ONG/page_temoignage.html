@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dans Leurs Yeux</title>
+    <style>
+        body {
+            margin: 0;
+            background-color: #1D1D1D;
+            color: white;
+        }
+
+        @font-face {
+    font-family: "Impact";
+    src: url('fonts/Impact.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: "Kanit";
+    src: url('fonts/Kanit-Regular.ttf') format('truetype');
+}
+
+header {
+    position: sticky;
+    top: 0; /* Fixe le header en haut de la page */
+    left: 0;
+    z-index: 100; /* Assure que le header reste au-dessus des autres éléments */
+    width: 100%;
+    background-color: #162B60; /* Couleur de fond */
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour effet de profondeur (optionnel) */
+}
+
+
+.all-menu {
+    display: flex;
+    flex-direction: row;
+    margin-left: 300px;
+    font-family: "Kanit";
+}
+
+.menu {
+    margin-left: 40px; /* Ajustez l'espacement entre les items */
+    position: relative; /* Nécessaire pour le pseudo-élément */
+}
+
+.menu a {
+    text-decoration: none; /* Supprime le soulignement */
+    color: white; /* Garde le texte blanc */
+    font-size: 20px;
+}
+
+.menu a:hover {
+    color: #F29653; /* Change la couleur au survol (optionnel) */
+}
+
+.menu a::after {
+    content: ""; /* Crée un pseudo-élément */
+    position: absolute;
+    bottom: -5px; /* Place la barre sous le texte */
+    left: 0;
+    width: 0; /* Commence avec une largeur nulle */
+    height: 3px; /* Épaisseur de la barre */
+    background-color: #F29653; /* Couleur orange */
+    transition: width 0.3s ease; /* Animation fluide */
+}
+
+.menu a:hover::after {
+    width: 100%; /* La barre s'étend sur toute la largeur au survol */
+}
+        .testimony {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 150px;
+            background-color: #1D1D1D;
+            gap: 20px;
+        }
+        .testimony img {
+            border-radius: 5px;
+            width: 250px;
+            height: auto;
+        }
+        .testimony h2 {
+            color: white;
+            font-size: 24px;
+            margin-bottom: 10px;
+            font-family: "Impact";
+            font-weight: normal;
+        }
+        .testimony blockquote {
+            font-style: italic;
+            color: #cccccc;
+            font-family: "Kanit";
+        }
+        .engagement {
+            text-align: center;
+            padding: 100px;
+            background-color: #162B60;
+        }
+        .engagement h2 {
+            margin-bottom: 20px;
+            font-family: "Impact";
+            font-weight: normal;
+        }
+        .ukraine {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            padding: 100px;
+            background-color: #1D1D1D;
+        }
+        .ukraine img {
+            width: 400px;
+            height: auto;
+        }
+        .ukraine .info {
+            max-width: 500px;
+            border: 2px solid #7DA0C2;
+            background-color: #7DA0C2;
+            padding: 30px;
+            border-radius: 5px;
+        }
+        .ukraine .info h2 {
+            margin-bottom: 15px;
+            font-family: "Impact";
+            font-weight: normal;
+        }
+        
+        .button {
+    display: inline-block;
+    background-color: #F29653; /* Couleur orange */
+    color: white;
+    padding: 10px 20px;
+    text-decoration: none; /* Supprime le soulignement */
+    border-radius: 5px; /* Ajoute des coins arrondis */
+    font-size: 16px;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+.button:hover {
+    background-color: #d98442; /* Change la couleur au survol */
+    transition: background-color 0.3s ease; /* Animation fluide au survol */
+}
+
+        p {
+    font-family: "Kanit";
+}
+
+
+footer {
+    background-color: #162B60; /* Fond blanc */
+    padding: 20px 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Espace entre les colonnes */
+    align-items: center; /* Aligner verticalement */
+    max-width: 1200px; /* Largeur max pour limiter l'étirement */
+    margin: 0 auto; /* Centrer le contenu */
+}
+
+.footer-left {
+    flex: 1; /* Prenez tout l'espace disponible à gauche */
+}
+
+.footer-logo {
+    max-height: 50px; /* Limitez la taille du logo */
+    object-fit: contain; /* Gardez les proportions */
+}
+
+.footer-right {
+    flex: 1; /* Prenez tout l'espace disponible à droite */
+    text-align: right; /* Alignement du texte à droite */
+}
+
+.footer-right h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #F29653; /* Couleur violette pour le titre */
+    margin-bottom: 8px;
+    font-family: "Impact";
+    font-weight: normal;
+}
+
+.footer-right p {
+    font-size: 14px;
+    color: #F29653;
+    margin-bottom: 15px;
+    font-family: "Kanit";
+}
+
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Aligner le formulaire à droite */
+    gap: 10px; /* Espacement entre le champ et le bouton */
+}
+
+.newsletter-form input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    width: 250px;
+    outline: none;
+}
+
+.newsletter-form input::placeholder {
+    color: #999; /* Couleur de l'indication */
+}
+
+.newsletter-form button {
+    background-color: #F29653; /* Couleur violette */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #162B60; /* Violette plus foncée au survol */
+}
+        .divider {
+            background: url('Group 75.png') no-repeat center;
+            background-size: cover;
+            height: 50px;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="img/logo-dansleursyeux.png" alt="Logo" /></a>
+        <div class="all-menu">
+            <div class="menu">
+                <a href=""><h4>Dons</h4></a>
+            </div>
+            <div class="menu">
+                <a href="nos_actions.html"><h4>Nos Actions</h4></a>
+            </div>
+            <div class="menu">
+                <a href="actualites.html"><h4>Actualités</h4></a>
+            </div>
+            <div class="menu">
+                <a href="page_temoignage.html"><h4>Bénévole</h4></a>
+            </div>
+            <div class="menu">
+                <a href="a_propos.html"><h4>À propos</h4></a>
+            </div>
+        </div>
+    </header>
+    
+
+    <section class="testimony">
+        <img src="Lucas.png" alt="Lucas Marchand">
+        <div>
+            <h2>Témoignage de Lucas</h2>
+            <p>Membre de l'équipe logistique.</p>
+            <blockquote>
+                "En rejoignant Dans Leurs Yeux, jamais je n’aurais cru apprendre autant de choses. Toutes les personnes ici sont bienveillantes. Tout le monde a le même objectif, secourir les victimes de guerre. Organiser les transports de secours, gérer les stocks de nourriture et de matériel médical, tout ça, j’ai appris à le faire. J’ai été accompagné par des professionnels, ce qui m’a permis de développer mes compétences professionnelles"
+            </blockquote>
+        </div>
+    </section>
+    <section class="engagement">
+        <h2>Un engagement qui sauve des vies</h2>
+        <p>
+            Les bénévoles sont indispensables à la mission de Dans Leurs Yeux.
+Sur le terrain, ils apportent une aide vitale en distribuant des ressources, en offrant des soins ou en menant des actions solidaires. À distance, leur travail, comme la préparation de colis humanitaires ou la gestion des réseaux sociaux, soutient l’ONG de manière précieuse.
+<br><br/>
+ Cette expérience, unique et enrichissante, développe leur solidarité, leur résilience et leur sens du collectif, tout en leur offrant des rencontres humaines marquantes. 
+Rejoignez-nous et devenez un acteur du changement
+        </p>
+    </section>
+
+    <div class="divider"></div>
+
+    <section class="ukraine">
+        <img src="map.png" alt="Carte">
+        <div class="info">
+            <h2>En Ukraine</h2>
+            <p>
+                Depuis 2022, la Russie envahit l’Ukraine. La population est gravement impactée par cette guerre. Les bombardements sans cesse et la destruction des villes et villages font de plus en plus de victimes civiles. Dans Leurs Yeux agit sur le terrain pour aider la population à subvenir à ses besoins et à sortir de cette crise.
+            </p>
+            <a href="s'engager.html" class="button">S'engager</a>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Colonne de gauche avec le logo -->
+            <div class="footer-left">
+                <img src="img/logo-dansleursyeux.png" alt="Logo" class="footer-logo">
+            </div>
+    
+            <!-- Colonne de droite avec la newsletter -->
+            <div class="footer-right">
+                <h3>INSCRIVEZ-VOUS À NOTRE NEWSLETTER</h3>
+                <p>Recevez nos actualités directement par e-mail</p>
+                <form action="newsletter.php" method="POST" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+                    <button type="submit">S'INSCRIRE</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

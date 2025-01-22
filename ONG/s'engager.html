@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>S'engager</title>
+    <style>
+        body {
+            overflow-x: none;
+            margin: 0;
+            background-color: #000000;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        @font-face {
+    font-family: "Impact";
+    src: url('fonts/Impact.TTF') format('truetype');
+}
+
+@font-face {
+    font-family: "Kanit";
+    src: url('fonts/Kanit-Regular.ttf') format('truetype');
+}
+
+header {
+    position: sticky;
+    top: 0; /* Fixe le header en haut de la page */
+    left: 0;
+    z-index: 100; /* Assure que le header reste au-dessus des autres éléments */
+    width: 100%;
+    background-color: #162B60; /* Couleur de fond */
+    height: 90px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Ajoute une ombre pour effet de profondeur (optionnel) */
+}
+
+
+.all-menu {
+    display: flex;
+    flex-direction: row;
+    margin-left: 300px;
+    font-family: "Kanit";
+}
+
+.menu {
+    margin-left: 40px; /* Ajustez l'espacement entre les items */
+    position: relative; /* Nécessaire pour le pseudo-élément */
+}
+
+.menu a {
+    text-decoration: none; /* Supprime le soulignement */
+    color: white; /* Garde le texte blanc */
+    font-size: 20px;
+}
+
+.menu a:hover {
+    color: #F29653; /* Change la couleur au survol (optionnel) */
+}
+
+.menu a::after {
+    content: ""; /* Crée un pseudo-élément */
+    position: absolute;
+    bottom: -5px; /* Place la barre sous le texte */
+    left: 0;
+    width: 0; /* Commence avec une largeur nulle */
+    height: 3px; /* Épaisseur de la barre */
+    background-color: #F29653; /* Couleur orange */
+    transition: width 0.3s ease; /* Animation fluide */
+}
+
+.menu a:hover::after {
+    width: 100%; /* La barre s'étend sur toute la largeur au survol */
+}
+        .form-section {
+            background-color: #162B60;
+            padding: 40px;
+            text-align: center;
+            flex: 1;
+        }
+        .form-section h1 {
+            font-size: 28px;
+            margin-bottom: 20px;
+            font-family: "Impact";
+            font-weight: normal;
+        }
+        .form-container {
+            max-width: 800px;
+            margin: 0 auto;
+            background-color: #1D1D1D;
+            padding: 30px;
+            border-radius: 8px;
+        }
+        .form-container form {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px 15px;
+        }
+        .form-container form input,
+        .form-container form textarea {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 3px;
+            font-size: 14px;
+        }
+        .form-container form label {
+            color: white;
+            font-size: 14px;
+            text-align: left;
+            font-family: "Kanit";
+        }
+        .form-container form label:nth-child(odd) {
+            grid-column: 1;
+        }
+        .form-container form label:nth-child(even) {
+            grid-column: 2;
+        }
+        .form-container form textarea {
+            grid-column: span 2;
+            resize: none;
+            height: 100px;
+        }
+        .form-container form button {
+            grid-column: span 2;
+            background-color: #F29653;
+            color: white;
+            border: none;
+            padding: 15px;
+            font-size: 16px;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+        .form-container form button:hover {
+            background-color: #F29653;
+        }
+        footer {
+    background-color: #162B60; /* Fond blanc */
+    padding: 20px 40px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between; /* Espace entre les colonnes */
+    align-items: center; /* Aligner verticalement */
+    max-width: 1200px; /* Largeur max pour limiter l'étirement */
+    margin: 0 auto; /* Centrer le contenu */
+}
+
+.footer-left {
+    flex: 1; /* Prenez tout l'espace disponible à gauche */
+}
+
+.footer-logo {
+    max-height: 50px; /* Limitez la taille du logo */
+    object-fit: contain; /* Gardez les proportions */
+}
+
+.footer-right {
+    flex: 1; /* Prenez tout l'espace disponible à droite */
+    text-align: right; /* Alignement du texte à droite */
+}
+
+.footer-right h3 {
+    font-size: 16px;
+    font-weight: bold;
+    color: #F29653; /* Couleur violette pour le titre */
+    margin-bottom: 8px;
+    font-family: "Impact";
+    font-weight: normal;
+}
+
+.footer-right p {
+    font-size: 14px;
+    color: #F29653;
+    margin-bottom: 15px;
+    font-family: "Kanit";
+}
+
+.newsletter-form {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end; /* Aligner le formulaire à droite */
+    gap: 10px; /* Espacement entre le champ et le bouton */
+}
+
+.newsletter-form input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #DDD;
+    border-radius: 4px;
+    width: 250px;
+    outline: none;
+}
+
+.newsletter-form input::placeholder {
+    color: #999; /* Couleur de l'indication */
+}
+
+.newsletter-form button {
+    background-color: #F29653; /* Couleur violette */
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #162B60; /* Violette plus foncée au survol */
+}
+
+    </style>
+</head>
+<body>
+    <header>
+        <a href="index.html"><img src="img/logo-dansleursyeux.png" alt="Logo" /></a>
+        <div class="all-menu">
+            <div class="menu">
+                <a href=""><h4>Dons</h4></a>
+            </div>
+            <div class="menu">
+                <a href="nos_actions.html"><h4>Nos Actions</h4></a>
+            </div>
+            <div class="menu">
+                <a href="actualites.html"><h4>Actualités</h4></a>
+            </div>
+            <div class="menu">
+                <a href="page_temoignage.html"><h4>Bénévole</h4></a>
+            </div>
+            <div class="menu">
+                <a href="a_propos.html"><h4>À propos</h4></a>
+            </div>
+        </div>
+    </header>
+    
+
+    <section class="form-section">
+        <h1>Engagez-vous et Agissez avec Nous</h1>
+        <div class="form-container">
+            <form>
+                <label for="nom">Nom</label>
+                <input id="nom" type="text" placeholder="Nom">
+
+                <label for="prenom">Prénom</label>
+                <input id="prenom" type="text" placeholder="Prénom">
+
+                <label for="date-naissance">Date de naissance</label>
+                <input id="date-naissance" type="date" placeholder="Date de naissance">
+
+                <label for="mail">Adresse Mail</label>
+                <input id="mail" type="email" placeholder="Adresse Mail">
+
+                <label for="disponibilite">Disponibilité</label>
+                <input id="disponibilite" type="text" placeholder="Disponibilité">
+
+                <label for="role">Rôle souhaité</label>
+                <input id="role" type="text" placeholder="Rôle souhaité">
+
+                <label for="motivation">Pourquoi voulez-vous devenir bénévole</label>
+                <textarea id="motivation" placeholder="Pourquoi voulez-vous devenir bénévole"></textarea>
+
+                <button type="submit">Envoyer ></button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <div class="footer-container">
+            <!-- Colonne de gauche avec le logo -->
+            <div class="footer-left">
+                <img src="img/logo-dansleursyeux.png" alt="Logo" class="footer-logo">
+            </div>
+    
+            <!-- Colonne de droite avec la newsletter -->
+            <div class="footer-right">
+                <h3>INSCRIVEZ-VOUS À NOTRE NEWSLETTER</h3>
+                <p>Recevez nos actualités directement par e-mail</p>
+                <form action="newsletter.php" method="POST" class="newsletter-form">
+                    <input type="email" name="email" placeholder="Votre adresse e-mail" required>
+                    <button type="submit">S'INSCRIRE</button>
+                </form>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
